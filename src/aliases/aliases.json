@@ -1,0 +1,9 @@
+[
+       {
+              "isActive": "yes",
+              "isFolder": "no",
+              "name": "chat update",
+              "regex": "^chat update$",
+              "script": ""
+       }
+]
