@@ -4,8 +4,9 @@ local fried = require("CKMud-Chat.fried")
 registerAnonymousEventHandler(
   "sysLoadEvent",
   fried:run_init(
-    "EMCO Tabs",
+    "__PKGNAME__ v__VERSION__",
     function()
+      demonnic.chat.consoles = {}
       demonnic.chat.consoles = {"All", "OOC", "Tells", "Group", "Auction", "Event", "Say"}
       demonnic.helpers.save()
     end
