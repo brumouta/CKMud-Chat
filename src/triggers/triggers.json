@@ -17,12 +17,12 @@
                             "type": "startOfLine"
                      },
                      {
-                            "pattern": "^\\[CLAN: ([^\\]]+)] ",
-                            "type": "regex"
+                            "pattern": "[CLAN:",
+                            "type": "startOfLine"
                      },
                      {
-                            "pattern": "^\\[CKMud Info]:",
-                            "type": "regex"
+                            "pattern": "[CKMud Info]:",
+                            "type": "startOfLine"
                      },
                      {
                             "pattern": "You have mastered",
@@ -69,11 +69,11 @@
               "highlightBG": "#ffff00",
               "patterns": [
                      {
-                            "pattern": "^([a-z ]+) tells you,",
+                            "pattern": "^(?:\\w+ ?)+ tells you,",
                             "type": "regex"
                      },
                      {
-                            "pattern": "You tell (\\w+),",
+                            "pattern": "You tell \\w+,",
                             "type": "regex"
                      }
               ],
@@ -97,9 +97,22 @@
                             "type": "startOfLine"
                      },
                      {
-                            "pattern": "^(\\w+) tells the group, ",
+                            "pattern": "^\\w+ tells the group, ",
+                            "type": "regex"
+                     },
+                     {
+                            "pattern": "You roll three 6 sided dice.",
+                            "type": "exactMatch"
+                     },
+                     {
+                            "pattern": "\\w+ rolls three 6 sided die.",
+                            "type": "regex"
+                     },
+                     {
+                            "pattern": "^(?:\\[\\w+])?\\[Dice 1: [0-9]+, Dice 2: [0-9]+, Dice 3: [0-9]+] Total: [0-9]+",
                             "type": "regex"
                      }
+
               ],
               "script": ""
        },
@@ -149,7 +162,7 @@
                             "type": "startOfLine"
                      },
                      {
-                            "pattern": "^([a-z ]+) says,",
+                            "pattern": "^(?:\\w+ ?)+ says,",
                             "type": "regex"
                      },
                      {
@@ -157,7 +170,7 @@
                             "type": "startOfLine"
                      },
                      {
-                            "pattern": "^([a-z ]+) asks,",
+                            "pattern": "^(?:\\w+ ?)+ asks,",
                             "type": "regex"
                      },
                      {
@@ -165,11 +178,11 @@
                             "type": "startOfLine"
                      },
                      {
-                            "pattern": "^([a-z ]+) exclaims,",
+                            "pattern": "^(?:\\w+ ?)+ exclaims,",
                             "type": "regex"
                      },
                      {
-                            "pattern": "^([a-z ]+) gives you (.*)",
+                            "pattern": "^(?:\\w+ ?)+ gives you .*",
                             "type": "regex"
                      }
               ],
