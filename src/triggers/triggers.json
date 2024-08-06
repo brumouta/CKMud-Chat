@@ -182,6 +182,14 @@
                             "type": "regex"
                      },
                      {
+                            "pattern": "You mutter,",
+                            "type": "startOfLine"
+                     },
+                     {
+                            "pattern": "^(?:\\w+ ?)+ mutters,",
+                            "type": "regex"
+                     },
+                     {
                             "pattern": "^(?:\\w+ ?)+ gives you .*",
                             "type": "regex"
                      }
