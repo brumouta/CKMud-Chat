@@ -12,6 +12,10 @@
                             "type": "startOfLine"
                      },
                      {
+                            "pattern": "[CHAT:",
+                            "type": "startOfLine"
+                     },
+                     {
                             "pattern": "[CKMud Info]:",
                             "type": "startOfLine"
                      },
