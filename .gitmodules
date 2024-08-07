@@ -1,3 +1,6 @@
 [submodule "external/Shared"]
 	path = external/Shared
 	url = git@github.com:CKMud-Mudlet-Scripts/Shared.git
+[submodule "external/MDK"]
+	path = external/MDK
+	url = git@github.com:demonnic/MDK.git
