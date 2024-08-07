@@ -7,6 +7,7 @@ Sets up triggers to log ooc/clantalk/tell to EMCO
 ## Installation
 
 First install EMCO package for mudlet using:
+
 `lua installPackage("https://github.com/demonnic/EMCO/releases/latest/download/EMCOChat.mpackage")`
 
 After that, you can install CKMud-Chat:
