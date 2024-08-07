@@ -1,0 +1,3 @@
+[submodule "external/Shared"]
+	path = external/Shared
+	url = git@github.com:CKMud-Mudlet-Scripts/Shared.git
