@@ -2,15 +2,6 @@
        {
               "name": "Chat OOC",
               "isActive": "yes",
-              "isFolder": "no",
-              "multiline": "no",
-              "multielineDelta": "0",
-              "matchall": "no",
-              "filter": "no",
-              "fireLength": "0",
-              "highlight": "no",
-              "highlightFG": "#ff0000",
-              "highlightBG": "#ffff00",
               "patterns": [
                      {
                             "pattern": "[OOC:",
@@ -33,101 +24,82 @@
                             "type": "startOfLine"
                      }
               ],
-              "script": ""
+              "script": "selectCurrentLine() demonnic.chat:append(\"OOC\") deselect() resetFormat()"
        },
        {
               "name": "Chat Auction",
               "isActive": "yes",
-              "isFolder": "no",
-              "multiline": "no",
-              "multielineDelta": "0",
-              "matchall": "no",
-              "filter": "no",
-              "fireLength": "0",
-              "highlight": "no",
-              "highlightFG": "#ff0000",
-              "highlightBG": "#ffff00",
               "patterns": [
                      {
                             "pattern": "[AUCTION:",
                             "type": "startOfLine"
                      }
               ],
-              "script": ""
-       },
-       {
-              "name": "Chat Tell",
-              "isActive": "yes",
-              "isFolder": "no",
-              "multiline": "no",
-              "multielineDelta": "0",
-              "matchall": "no",
-              "filter": "no",
-              "fireLength": "0",
-              "highlight": "no",
-              "highlightFG": "#ff0000",
-              "highlightBG": "#ffff00",
-              "patterns": [
-                     {
-                            "pattern": "^(?:\\w+ ?)+ tells you,",
-                            "type": "regex"
-                     },
-                     {
-                            "pattern": "You tell \\w+,",
-                            "type": "regex"
-                     }
-              ],
-              "script": ""
+              "script": "selectCurrentLine() demonnic.chat:append(\"Auction\") deselect() resetFormat()"
        },
        {
               "name": "Chat Group",
               "isActive": "yes",
-              "isFolder": "no",
-              "multiline": "no",
-              "multielineDelta": "0",
-              "matchall": "no",
-              "filter": "no",
-              "fireLength": "0",
-              "highlight": "no",
-              "highlightFG": "#ff0000",
-              "highlightBG": "#ffff00",
+              "isFolder": "yes",
+              "children": [
+                     {
+                            "name": "gtell",
+                            "isActive": "yes",
+                            "multiline": "yes",
+                            "patterns": [
+                                   {
+                                          "pattern": "the group, ",
+                                          "type": "substring"
+                                   },
+                                   {
+                                          "pattern": "^.+? tells? the group, '.+'$",
+                                          "type": "regex"
+                                   }
+                            ],
+                            "script": "selectCurrentLine() demonnic.chat:append(\"Group\") deselect() resetFormat()",
+                     },
+                     {
+                            "name": "diceroll",
+                            "isActive": "yes",
+                            "multiline": "yes",
+                            "multilineDelta": "1",
+                            "patterns": [
+                                   {
+                                          "pattern": "three 6 sided di",
+                                          "type": "substring"
+                                   },
+                                   {
+                                          "pattern": "^.+? rolls? three 6 sided di(?:e|ce).$",
+                                          "type": "regex"
+                                   },
+                                   {
+                                          "pattern": "Total: ",
+                                          "type": "substring"
+                                   }
+                            ]
+                     }
+              ]
+       },
+       {
+              "name": "Chat Tell",
+              "isActive": "yes",
+              "multiline": "yes",
               "patterns": [
                      {
-                            "pattern": "You tell the group,",
-                            "type": "startOfLine"
+                            "pattern": "tell",
+                            "type": "substring"
                      },
                      {
-                            "pattern": "^\\w+ tells the group, ",
-                            "type": "regex"
-                     },
-                     {
-                            "pattern": "You roll three 6 sided dice.",
-                            "type": "exactMatch"
-                     },
-                     {
-                            "pattern": "\\w+ rolls three 6 sided die.",
-                            "type": "regex"
-                     },
-                     {
-                            "pattern": "^(?:\\[\\w+])?\\[Dice 1: [0-9]+, Dice 2: [0-9]+, Dice 3: [0-9]+] Total: [0-9]+",
+                            "comment": "We use a \\w here to not accidently grab group tells",
+                            "pattern": "^.+? tells? \\w+?, '.+'$",
                             "type": "regex"
                      }
-
               ],
-              "script": ""
+              "script": "selectCurrentLine() demonnic.chat:append(\"Tells\") deselect() resetFormat()"
        },
        {
               "name": "Chat Event",
               "isActive": "yes",
-              "isFolder": "no",
-              "multiline": "no",
-              "multielineDelta": "0",
-              "matchall": "no",
-              "filter": "no",
-              "fireLength": "0",
-              "highlight": "no",
-              "highlightFG": "#ff0000",
-              "highlightBG": "#ffff00",
               "patterns": [
                      {
                             "pattern": "[Quest:",
@@ -142,58 +114,93 @@
                             "type": "startOfLine"
                      }
               ],
-              "script": ""
+              "script": "selectCurrentLine() demonnic.chat:append(\"Event\") deselect() resetFormat()"
        },
        {
               "name": "Chat Say",
               "isActive": "yes",
-              "isFolder": "no",
-              "multiline": "no",
-              "multielineDelta": "0",
-              "matchall": "no",
-              "filter": "no",
-              "fireLength": "0",
-              "highlight": "no",
-              "highlightFG": "#ff0000",
-              "highlightBG": "#ffff00",
-              "patterns": [
+              "isFolder": "yes",
+              "children": [
                      {
-                            "pattern": "You say,",
-                            "type": "startOfLine"
+                            "name": "say",
+                            "isActive": "yes",
+                            "multiline": "yes",
+                            "patterns": [
+                                   {
+                                          "pattern": "say",
+                                          "type": "substring"
+                                   },
+                                   {
+                                          "pattern": "^.+? says?, '.+'$",
+                                          "type": "regex"
+                                   }
+                            ],
+                            "script": "selectCurrentLine() demonnic.chat:append(\"Say\") deselect() resetFormat()",
                      },
                      {
-                            "pattern": "^(?:\\w+ ?)+ says,",
-                            "type": "regex"
+                            "name": "Ask",
+                            "isActive": "yes",
+                            "multiline": "yes",
+                            "patterns": [
+                                   {
+                                          "pattern": "ask",
+                                          "type": "substring"
+                                   },
+                                   {
+                                          "pattern": "^.+? asks?, '.+'$",
+                                          "type": "regex"
+                                   }
+                            ],
+                            "script": "selectCurrentLine() demonnic.chat:append(\"Say\") deselect() resetFormat()"
                      },
                      {
-                            "pattern": "You ask,",
-                            "type": "startOfLine"
+                            "name": "exclaim",
+                            "isActive": "yes",
+                            "multiline": "yes",
+                            "patterns": [
+                                   {
+                                          "pattern": "exclaim",
+                                          "type": "substring"
+                                   },
+                                   {
+                                          "pattern": "^.+? exclaims?, '.+'$",
+                                          "type": "regex"
+                                   }
+                            ],
+                            "script": "selectCurrentLine() demonnic.chat:append(\"Say\") deselect() resetFormat()"
                      },
                      {
-                            "pattern": "^(?:\\w+ ?)+ asks,",
-                            "type": "regex"
+                            "name": "mutter",
+                            "isActive": "yes",
+                            "multiline": "yes",
+                            "patterns": [
+                                   {
+                                          "pattern": "mutter",
+                                          "type": "substring"
+                                   },
+                                   {
+                                          "pattern": "^.+? mutters?, '.+'$",
+                                          "type": "regex"
+                                   }
+                            ],
+                            "script": "selectCurrentLine() demonnic.chat:append(\"Say\") deselect() resetFormat()"
                      },
                      {
-                            "pattern": "You exclaim,",
-                            "type": "startOfLine"
-                     },
-                     {
-                            "pattern": "^(?:\\w+ ?)+ exclaims,",
-                            "type": "regex"
-                     },
-                     {
-                            "pattern": "You mutter,",
-                            "type": "startOfLine"
-                     },
-                     {
-                            "pattern": "^(?:\\w+ ?)+ mutters,",
-                            "type": "regex"
-                     },
-                     {
-                            "pattern": "^(?:\\w+ ?)+ gives you .*",
-                            "type": "regex"
+                            "name": "give",
+                            "isActive": "yes",
+                            "multiline": "yes",
+                            "patterns": [
+                                   {
+                                          "pattern": "give",
+                                          "type": "substring"
+                                   },
+                                   {
+                                          "pattern": "^.+? gives?(?: you)? .+\\.$",
+                                          "type": "regex"
+                                   }
+                            ],
+                            "script": "selectCurrentLine() demonnic.chat:append(\"Say\") deselect() resetFormat()"
                      }
-              ],
-              "script": ""
+              ]
        }
 ]
