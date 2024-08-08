@@ -1,9 +1,62 @@
 [
-       {
-              "isActive": "yes",
-              "isFolder": "no",
-              "name": "ckchat update",
-              "regex": "^ckchat update$",
-              "script": ""
-       }
+  {
+    "name": "ckchat",
+    "regex": "^ckchat (save|load|font|fontSize|blink|blankLine|timestamp|show|hide)(?: (.+))?$"
+  },
+  {
+    "name": "ckchat gag",
+    "regex": "^ckchat gag (.+)"
+  },
+  {
+    "name": "ckchat ungag",
+    "regex": "^ckchat ungag (.+)"
+  },
+  {
+    "name": "ckchat gaglist",
+    "regex": "^ckchat gaglist$"
+  },
+  {
+    "name": "ckchat notify",
+    "regex": "^ckchat notify (.*)"
+  },
+  {
+    "name": "ckchat unnotify",
+    "regex": "^ckchat unnotify (.*)"
+  },
+  {
+    "name": "ckchat addtab",
+    "regex": "^ckchat addtab (\\w+)( \\d+)?$"
+  },
+  {
+    "name": "ckchat remtab",
+    "regex": "^ckchat remtab (.+)"
+  },
+  {
+    "name": "ckchat color",
+    "regex": "^ckchat color (\\w+) (.+)"
+  },
+  {
+    "name": "ckchat color usage",
+    "regex": "^ckchat color$"
+  },
+  {
+    "name": "ckchat usage",
+    "regex": "^ckchat( usage)?$"
+  },
+  {
+    "name": "ckchat update",
+    "regex": "^ckchat update$"
+  },
+  {
+    "name": "ckchat title",
+    "regex": "^ckchat title (.+)"
+  },
+  {
+    "name": "ckchat lock",
+    "regex": "^ckchat lock$"
+  },
+  {
+    "name": "ckchat unlock",
+    "regex": "^ckchat unlock$"
+  }
 ]

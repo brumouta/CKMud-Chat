@@ -1,0 +1,1 @@
+require("__PKGNAME__.fried"):get_table("chat").container:unlockContainer()
