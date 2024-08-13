@@ -28,7 +28,7 @@
                             "type": "startOfLine"
                      }
               ],
-              "script": "selectCurrentLine() demonnic.chat:append(\"OOC\") deselect() resetFormat()"
+              "script": "selectCurrentLine() demonnic.chat:append(\"OOC\") if not ckchat.showLine then deleteLine() end deselect() resetFormat()"
        },
        {
               "name": "Chat Auction",

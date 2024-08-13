@@ -5,5 +5,12 @@
               "name": "ckchat update",
               "regex": "^ckchat update$",
               "script": ""
+       },
+       {
+              "isActive": "yes",
+              "isFolder": "no",
+              "name": "ckchat showLine",
+              "regex": "^ckchat showLine$",
+              "script": ""
        }
 ]

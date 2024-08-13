@@ -1,0 +1,1 @@
+ckchat.showLine = not foo
