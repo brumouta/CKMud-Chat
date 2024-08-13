@@ -1,4 +1,4 @@
-local chat = require("__PKGNAME__.fried"):get_table("chat")
+local chat = FRIED.chat
 
 local tabName = matches[2]
 local pos = tonumber(matches[3])

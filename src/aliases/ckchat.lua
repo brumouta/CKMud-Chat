@@ -1,4 +1,4 @@
-local chat = require("__PKGNAME__.fried"):get_table("chat")
+local chat = FRIED.chat
 local valid_options = {"font", "fontSize", "blink", "blankLine", "timestamp", "save", "load", "show", "hide"}
 local valid_options_string = table.concat(valid_options, ", ")
 local option = matches[2]

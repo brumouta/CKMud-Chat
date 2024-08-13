@@ -1,4 +1,4 @@
-local chat = require("__PKGNAME__.fried"):get_table("chat")
+local chat = FRIED.chat
 local echo = chat.helpers.echo
 local ok, err = chat.helpers.setConfig(matches[2], matches[3])
 

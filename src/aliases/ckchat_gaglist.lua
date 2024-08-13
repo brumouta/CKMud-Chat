@@ -1,4 +1,4 @@
-local chat = require("__PKGNAME__.fried"):get_table("chat")
+local chat = FRIED.chat
 local lecho = chat.helpers.echo
 local gaggedLines = table.keys(chat.emco.gags)
 table.sort(gaggedLines)
