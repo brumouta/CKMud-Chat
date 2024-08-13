@@ -28,7 +28,7 @@
                             "type": "startOfLine"
                      }
               ],
-              "script": "selectCurrentLine() require(\"__PKGNAME__.fried\"):get_table(\"chat\").emco:append(\"OOC\") deselect() resetFormat()"
+              "script": "selectCurrentLine() FRIED.chat.emco:append(\"OOC\") deselect() resetFormat()"
        },
        {
               "name": "Chat Auction",
@@ -39,7 +39,7 @@
                             "type": "startOfLine"
                      }
               ],
-              "script": "selectCurrentLine() require(\"__PKGNAME__.fried\"):get_table(\"chat\").emco:append(\"Auction\") deselect() resetFormat()"
+              "script": "selectCurrentLine() FRIED.chat.emco:append(\"Auction\") deselect() resetFormat()"
        },
        {
               "name": "Chat Group",
@@ -60,7 +60,7 @@
                                           "type": "regex"
                                    }
                             ],
-                            "script": "selectCurrentLine() require(\"__PKGNAME__.fried\"):get_table(\"chat\").emco:append(\"Group\") deselect() resetFormat()",
+                            "script": "selectCurrentLine() FRIED.chat.emco:append(\"Group\") deselect() resetFormat()",
                      },
                      {
                             "name": "diceroll",
@@ -99,7 +99,7 @@
                             "type": "regex"
                      }
               ],
-              "script": "selectCurrentLine() require(\"__PKGNAME__.fried\"):get_table(\"chat\").emco:append(\"Tells\") deselect() resetFormat()"
+              "script": "selectCurrentLine() FRIED.chat.emco:append(\"Tells\") deselect() resetFormat()"
        },
        {
               "name": "Chat Event",
@@ -118,7 +118,7 @@
                             "type": "startOfLine"
                      }
               ],
-              "script": "selectCurrentLine() require(\"__PKGNAME__.fried\"):get_table(\"chat\").emco:append(\"Event\") deselect() resetFormat()"
+              "script": "selectCurrentLine() FRIED.chat.emco:append(\"Event\") deselect() resetFormat()"
        },
        {
               "name": "Chat Say",
@@ -139,7 +139,7 @@
                                           "type": "regex"
                                    }
                             ],
-                            "script": "selectCurrentLine() require(\"__PKGNAME__.fried\"):get_table(\"chat\").emco:append(\"Say\") deselect() resetFormat()",
+                            "script": "selectCurrentLine() FRIED.chat.emco:append(\"Say\") deselect() resetFormat()",
                      },
                      {
                             "name": "Ask",
@@ -155,7 +155,7 @@
                                           "type": "regex"
                                    }
                             ],
-                            "script": "selectCurrentLine() require(\"__PKGNAME__.fried\"):get_table(\"chat\").emco:append(\"Say\") deselect() resetFormat()"
+                            "script": "selectCurrentLine() FRIED.chat.emco:append(\"Say\") deselect() resetFormat()"
                      },
                      {
                             "name": "exclaim",
@@ -171,7 +171,7 @@
                                           "type": "regex"
                                    }
                             ],
-                            "script": "selectCurrentLine() require(\"__PKGNAME__.fried\"):get_table(\"chat\").emco:append(\"Say\") deselect() resetFormat()"
+                            "script": "selectCurrentLine() FRIED.chat.emco:append(\"Say\") deselect() resetFormat()"
                      },
                      {
                             "name": "mutter",
@@ -187,7 +187,7 @@
                                           "type": "regex"
                                    }
                             ],
-                            "script": "selectCurrentLine() require(\"__PKGNAME__.fried\"):get_table(\"chat\").emco:append(\"Say\") deselect() resetFormat()"
+                            "script": "selectCurrentLine() FRIED.chat.emco:append(\"Say\") deselect() resetFormat()"
                      },
                      {
                             "name": "give",
@@ -203,7 +203,7 @@
                                           "type": "regex"
                                    }
                             ],
-                            "script": "selectCurrentLine() require(\"__PKGNAME__.fried\"):get_table(\"chat\").emco:append(\"Say\") deselect() resetFormat()"
+                            "script": "selectCurrentLine() FRIED.chat.emco:append(\"Say\") deselect() resetFormat()"
                      }
               ]
        }

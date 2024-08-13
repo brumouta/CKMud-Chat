@@ -1,5 +1,5 @@
 -- Get two lines, who rolled and the result
-local emco = require("__PKGNAME__.fried"):get_table("chat").emco
+local emco = FRIED.chat.emco
 
 moveCursor(0, getLineNumber() - 1)
 selectCurrentLine()

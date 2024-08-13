@@ -1,6 +1,6 @@
 local fried = require("__PKGNAME__.fried")
 local chat = fried:get_table("chat")
-fried:get_table("chat.helpers")
+local helpers = fried:get_table("chat.helpers")
 local defaultConfig = { activeColor = "black", inactiveColor = "black", activeBorder = "green", activeText = "green", inactiveText =
 "grey", background = "black", windowBorder = "green", title = "green" }
 local emco = require("__PKGNAME__.emco")
@@ -36,12 +36,12 @@ local default_constraints = {
 local EMCOfilename = getMudletHomeDir() .. "/__PKGNAME__/EMCOPrebuiltChat.lua"
 local confFile = getMudletHomeDir() .. "/__PKGNAME__/EMCOPrebuiltExtraOptions.lua"
 
-function chat.helpers.echo(msg)
+function helpers.echo(msg)
     msg = msg or ""
     cecho(f "<green>CKChat: <reset>{msg}\n")
 end
 
-function chat.helpers.resetToDefaults()
+function helpers.resetToDefaults()
     default_constraints.adjLabelstyle = adjLabelStyle:getCSS()
     chat.container = chat.container or Adjustable.Container:new(default_constraints)
     chat.config = defaultConfig
@@ -69,10 +69,10 @@ function chat.helpers.resetToDefaults()
         gap = 3,
         commandLine = true,
     }, chat.container)
-    chat.helpers.retheme()
+    helpers.retheme()
 end
 
-function chat.helpers.retheme()
+function helpers.retheme()
     activeStyle:set("background-color", chat.config.activeColor)
     activeStyle:set("border-color", chat.config.activeBorder)
     inactiveStyle:set("background-color", chat.config.inactiveColor)
@@ -90,23 +90,23 @@ function chat.helpers.retheme()
     chat.emco:switchTab(chat.emco.currentTab)
 end
 
-function chat.helpers.setConfig(cfg, val)
+function helpers.setConfig(cfg, val)
     local validOptions = table.keys(chat.config)
     if not table.contains(validOptions, cfg) then
         return nil, f"invalid option: valid options are {table.concat(validOptions, ', ')}"
     end
     chat.config[cfg] = val
-    chat.helpers.retheme()
+    helpers.retheme()
     return true
 end
 
-function chat.helpers.save()
+function helpers.save()
     chat.emco:save()
     table.save(confFile, chat.config)
     chat.container:save()
 end
 
-function chat.helpers.load()
+function helpers.load()
     if io.exists(confFile) then
         local conf = {}
         table.load(confFile, conf)
@@ -121,12 +121,14 @@ function chat.helpers.load()
         chat.emco:show()
     end
     chat.container:load()
-    chat.helpers.retheme()
+    helpers.retheme()
 end
 
 local function startup()
-    chat.helpers.resetToDefaults()
-    chat.helpers.load()
+    helpers.resetToDefaults()
+    helpers.load()
 end
 
-registerNamedEventHandler("CKMud-Chat", "CKChat startup", "sysLoadEvent", startup)
+if not chat.emco then
+    startup()
+end
