@@ -1,8 +1,5 @@
 [
        {
-              "isActive": "yes",
-              "isFolder": "no",
-              "name": "Configure Chat",
-              "script": ""
+              "name": "ckchat"
        }
 ]

@@ -1,14 +1,15 @@
 -- Get two lines, who rolled and the result
+local emco = FRIED.chat.emco
 
 moveCursor(0, getLineNumber() - 1)
 selectCurrentLine()
 copy()
-demonnic.chat:append("Group")
+emco:append("Group")
 deselect()
 resetFormat()
 moveCursor(0, getLineNumber() + 1)
 selectCurrentLine()
 copy()
-demonnic.chat:append("Group")
+emco.chat:append("Group")
 deselect()
 resetFormat()

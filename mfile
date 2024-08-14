@@ -1,9 +1,8 @@
 {
   "package": "CKMud-Chat",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "author": "fried",
   "title": "EMCO Chat for CKMud",
   "icon": "bulma.png",
-  "dependencies": "EMCOChat",
   "outputFile": true
 }
