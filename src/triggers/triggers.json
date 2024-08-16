@@ -199,7 +199,7 @@
                                           "type": "substring"
                                    },
                                    {
-                                          "pattern": "^.+? gives?(?: you)? .+\\.$",
+                                          "pattern": "^[A-Za-z0-9 ]+ gives?(?: you)? .+\\.$",
                                           "type": "regex"
                                    }
                             ],
