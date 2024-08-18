@@ -20,6 +20,10 @@
                             "type": "startOfLine"
                      },
                      {
+                            "pattern": "[Congrats:",
+                            "type": "startOfLine"
+                     },
+                     {
                             "pattern": "You have mastered",
                             "type": "startOfLine"
                      },
