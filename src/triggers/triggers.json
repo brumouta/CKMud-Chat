@@ -24,6 +24,10 @@
                             "type": "startOfLine"
                      },
                      {
+                            "pattern": "[Music:",
+                            "type": "startOfLine",    
+                     },
+                     {
                             "pattern": "You have mastered",
                             "type": "startOfLine"
                      },
