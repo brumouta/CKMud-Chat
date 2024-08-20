@@ -6,17 +6,11 @@ Sets up triggers to log ooc/clantalk/tell to EMCO
 
 ## Installation
 
-First install EMCO package for mudlet using:
+To install ckchat, paste this command in your client.
 
-`lua installPackage("https://github.com/demonnic/EMCO/releases/latest/download/EMCOChat.mpackage")`
+`lua installPackage("https://github.com/CKMud-Mudlet-Scripts/Chat/releases/latest/download/CKMud-Chat.mpackage")`
 
-After that, you can install CKMud-Chat:
-
-`lua installPackage("https://github.com/CKMud-Mudlet-Scripts/Chat/releases/latest/download/CKMud-Chat.mpackage")` from command prompt.
-
-After installation, run `lua resetProfile()`.
-
-After installation `ckchat update` alias will take care of updating the script.
+After installation, when a new version of ckchat is launched, `ckchat update` alias will take care of updating the script.
 
 ## Usage
 
